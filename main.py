@@ -1,93 +1,26 @@
-
-class Restaurante:
-
-    def __init__(self, produto, bebida, acompanhamento):
-        self.produto = produto
-        self.bebida = bebida
-        self.acompanhamento = acompanhamento
-
-
-    def hamburgueria():
-        self.produto = "hamburguer"
-        self,bebida = "refri"
-        self.acompanhamento = "fritas"
-
-    def temakeria():
-        self.produto = "temaki"
-        self.bebida = "suco"
-        self.acompanhamento = "sushi"
+from Pedido import Pedido
+from Cliente import Cliente
+from Restaurante import Restaurante
+from ItemCardapio import ItemCardapio
+from Entrega import Entrega
+from Pagamento import Pagamento
 
 
-    def pizzaria():
-        self.produto = "pizza"
-        self.bebida = "coca-cola"
-        self.acompanhamento = "esfiha"
-
-
-class Item_cardapio:
-    def __init__(self ):
-
-
-class pedido:
-    TAXA_DE_ENTREGA_RAPIDA = 5
-
-    def __init__(self_, nome: str, preco: float, status):
-        self.nome= none 
-        self.preco = preco
-        self.status = status
-
-
-
-
-class Pagamento:
-
-    def __init__(self, debito, credito, dinheiro):
-        self.debito = debito
-        self.credito = credito
-        self.dinheiro = dinheiro
-
-        def valor_total
     
-    
-    def Forma_de_pagamento(self):
-        tipo_pagamento = input()
-        if tipo_pagamento == "debito":
-            print(f"{valor_total} foi pago")
-        elif(tipo_pagamento == "credito"):
-            print(f"compra aprovada no credito com valor total de {valor_total}") 
-        elif(tipo_pagamento == "dinheiro"):
-            print(f"valor a ser pago na hora ")
+pedido_cliente = Pedido(Cliente("carlos","madre",24124),Restaurante("pizzaria","italiana"))
 
+pedido_cliente.adicionar_item(ItemCardapio("pizza peperroni","boa pizza",20))
 
+pedido_cliente.adicionar_item(ItemCardapio("pizza de mussarela","essa e tbm uma boa pizza",50))
 
+entrega = Entrega("RAPIDO")
 
-h = Pagamento.Forma_de_pagamento()
+pagamento = Pagamento("PIX")
 
-print(h)
+print(pagamento.escolher_forma_pagamento())
 
+pedido_cliente.valor_taxa_produto(entrega.getTaxa())
 
-# class Pizzaria:
-#     def __init__(self, pizza, refri, esfiha):
-#         self.pizza = pizza
-#         self.refri = refri
-#         self.esfiha = esfiha
+pedido_cliente.calcular_valor_total_pedido()
 
-
-# class Hamburgueria:
-#     def __init__(self, hamburguer, refri, batata):
-#         self.hamburguer = hamburguer
-#         self.refri = refri
-#         self.batata = batata
-
-#     def criar():
-#         hamburguer = "monster",    
-#         refri = "coca"
-#         batata = "fritas"
-
-# class Temakeria:
-#     def __init__(self, temaki, refri, sushi):
-#         self.temaki = temaki
-#         self.refri = refri
-#         self.sushi = sushi
-
-
+print(pedido_cliente.recibo_de_entrega())
